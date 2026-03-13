@@ -1,0 +1,143 @@
+/* 1. 전체 선택자 & 초기화 (단위: px) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px; /* 기본 폰트 크기 설정 */
+}
+
+/* 2. 태그 선택자 (body) */
+body {
+  background-color: #f4f4f4;
+  /* Flexbox 활용: 메인 컨텐츠 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 3. nav & 자식 선택자 (>) & 하위 선택자 (공백) */
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+  color: white;
+  position: fixed; /* 상단 고정 */
+  top: 0;
+  z-index: 1000;
+}
+nav > ul {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  /* justify-content: space-between 활용 */
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20%;
+}
+nav li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+/* 가상 클래스 선택자 */
+nav li:hover {
+  color: #ffb6c1;
+}
+
+/* 4. ID 선택자 (#) & Class 선택자 (.) */
+#heading {
+  margin-top: 100px;
+  color: #333;
+  text-align: center;
+  /* 단위: rem 활용 (기본 16px * 2.5 = 40px) */
+  font-size: 2.5rem;
+}
+
+.contents {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #ff69b4;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 5. Flex 레이아웃 (main) */
+main {
+  /* 단위: vw/vh 활용 */
+  width: 80vw;
+  height: 100vh;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column; /* 세로 방향 정렬 */
+  justify-content: space-between; /* 수직 중앙 */
+  align-items: center; /* 수평 중앙 */
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 6. 단위: em 활용 (부모 폰트 크기 기준) */
+section p {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+#contacts {
+  width: 100%;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 10px;
+}
+
+/* 7. Input & Button 스타일 (가상 클래스) */
+input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+}
+
+input:focus {
+  outline: 2px solid #ff69b4; /* 포커스 시 테두리 변경 */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+button:hover {
+  background-color: #ff1493;
+  transform: scale(1.05); /* 마우스 올리면 살짝 커짐 */
+}
+button:active {
+  transform: scale(0.95); /* 클릭 시 살짝 들어감 */
+}
+
+/* 8. Footer & Position */
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 80px;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #777;
+  font-weight: bold;
+  /* 단위: % 활용 */
+  font-size: 120%;
+}
