@@ -66,10 +66,11 @@ nav li:hover {
 main {
   /* 단위: vw/vh 활용 */
   width: 80vw;
+  height: 100vh;
   margin: 20px 0;
   display: flex;
   flex-direction: column; /* 세로 방향 정렬 */
-  justify-content: center; /* 수직 중앙 */
+  justify-content: space-between; /* 수직 중앙 */
   align-items: center; /* 수평 중앙 */
   background: white;
   padding: 40px;
@@ -81,6 +82,13 @@ main {
 section p {
   font-size: 1.2em;
   margin: 5px 0;
+}
+
+#contacts {
+  width: 100%;
+  background-color: #ffb6c1;
+  color: white;
+  padding: 10px;
 }
 
 /* 7. Input & Button 스타일 (가상 클래스) */
