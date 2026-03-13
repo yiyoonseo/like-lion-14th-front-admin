@@ -1,0 +1,297 @@
+/* 간단한 초기화 */
+/* 전체 선택자 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* id 선택자와 class 선택자 */
+/* id 선택자 */
+#heading {
+  margin-top: 100px;
+  color: pink;
+}
+/* class 선택자 */
+.contents {
+  width: 400px;
+  height: 200px;
+  border: 1px solid gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 태그 선택자 (nav)*/
+nav {
+  height: 80px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+/* 자식 선택자 */
+nav > ul {
+  height: 100%; /* 부모 요소의 높이를 100%로 설정 */
+  display: flex;
+  justify-content: space-between;
+}
+/* 하위 선택자 */
+nav li {
+  margin: 10px 20px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* button & 가상 클래스 선택자 */
+button {
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  opacity: 50%;
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+/* 가상 클래스 선택자 */
+/* ✅ 마우스 올렸을 때 */
+button:hover {
+  opacity: 100%;
+}
+
+/* ✅ 클릭하는 동안 */
+button:active {
+  color: #fff;
+}
+
+input:focus {
+  outline: 1px solid red;
+}
+
+/* flex & em */
+#parent-box {
+  width: 1000px;
+  height: 100vh;
+  background-color: lightgray;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#first-box {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+}
+
+#second-box {
+  width: 200px;
+  height: 200px;
+  background-color: violet;
+  color: white;
+  font-size: 10em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* relative */
+#third-box {
+  width: 200px;
+  height: 200px;
+  background-color: lightgreen;
+  font-weight: 900;
+  font-size: 60px;
+
+  position: relative;
+}
+
+/* absolute */
+#third-box div {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* footer */
+footer {
+  height: 100px;
+  background-color: pink;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
+/* 간단한 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* id 선택자와 class 선택자 */
+/* id 선택자 */
+#heading {
+  margin-top: 100px;
+  color: pink;
+}
+/* class 선택자 */
+.contents {
+  width: 400px;
+  height: 200px;
+  border: 1px solid gray;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 태그 선택자 (nav)*/
+nav {
+  height: 80px;
+  background-color: black;
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+/* 자식 선택자 */
+nav > ul {
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+/* 하위 선택자 */
+nav li {
+  margin: 10px 20px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* button & 가상 클래스 선택자 */
+button {
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  opacity: 50%;
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+/* 가상 클래스 선택자 */
+/* ✅ 마우스 올렸을 때 */
+button:hover {
+  opacity: 100%;
+}
+
+/* ✅ 클릭하는 동안 */
+button:active {
+  color: #fff;
+}
+
+input:focus {
+  outline: 1px solid red;
+}
+
+/* flex & em */
+#parent-box {
+  width: 1000px;
+  height: 100vh;
+  background-color: lightgray;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#first-box {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+}
+
+#second-box {
+  width: 200px;
+  height: 200px;
+  background-color: violet;
+  color: white;
+  font-size: 10em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* relative */
+#third-box {
+  width: 200px;
+  height: 200px;
+  background-color: lightgreen;
+  font-weight: 900;
+  font-size: 60px;
+
+  position: relative;
+}
+
+/* absolute */
+#third-box div {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* footer */
+footer {
+  height: 100px;
+  background-color: pink;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+}
