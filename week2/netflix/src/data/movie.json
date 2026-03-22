@@ -1,8 +1,38 @@
-{
+[
+  {
+  "movieId": 1,
   "movieImage": "/src/assets/monthly-boyfriend.jpeg",
   "releaseDate": "2026-03-06",
   "artist": "지수",
   "title": "월간남친",
   "director": "김정식",
   "description": "회사의 압박을 받던 윤 작가가 1위 탈환을 위해 안간힘을 쓰다 스캔들에 휘말린다. 그러던 중 경남은 미래가 숨기고 있던 비밀을 마주하게 된다."
-}
+  },
+  {
+  "movieId": 2,
+  "movieImage": "/src/assets/monthly-boyfriend.jpeg",
+  "releaseDate": "2026-03-06",
+  "artist": "지수",
+  "title": "월간남친",
+  "director": "김정식",
+  "description": "회사의 압박을 받던 윤 작가가 1위 탈환을 위해 안간힘을 쓰다 스캔들에 휘말린다. 그러던 중 경남은 미래가 숨기고 있던 비밀을 마주하게 된다."
+  },
+  {
+  "movieId": 3,
+  "movieImage": "/src/assets/monthly-boyfriend.jpeg",
+  "releaseDate": "2026-03-06",
+  "artist": "지수",
+  "title": "월간남친",
+  "director": "김정식",
+  "description": "회사의 압박을 받던 윤 작가가 1위 탈환을 위해 안간힘을 쓰다 스캔들에 휘말린다. 그러던 중 경남은 미래가 숨기고 있던 비밀을 마주하게 된다."
+  },
+  {
+  "movieId": 4,
+  "movieImage": "/src/assets/monthly-boyfriend.jpeg",
+  "releaseDate": "2026-03-06",
+  "artist": "지수",
+  "title": "월간남친",
+  "director": "김정식",
+  "description": "회사의 압박을 받던 윤 작가가 1위 탈환을 위해 안간힘을 쓰다 스캔들에 휘말린다. 그러던 중 경남은 미래가 숨기고 있던 비밀을 마주하게 된다."
+  }
+]
