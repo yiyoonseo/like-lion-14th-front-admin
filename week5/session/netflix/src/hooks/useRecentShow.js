@@ -1,24 +1,31 @@
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
+import { getContents, postContent } from '../apis/mypageApi';
 
 const useRecentShows = () => {
-  const [recentShows, setRecentShows] = useState(() =>
-    JSON.parse(localStorage.getItem('recentShows') ?? '[]')
-  );
+  const [recentShows, setRecentShows] = useState([]);
 
-  const addShow = (show) => {
-    setRecentShows((prev) => {
-      const next = [show, ...prev.filter((s) => s.id !== show.id)].slice(0, 10);
-      localStorage.setItem('recentShows', JSON.stringify(next));
-      return next;
-    });
+  useEffect(() => {
+    getContents()
+      .then((data) => setRecentShows(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  const addShow = async (show) => {
+    const isDuplicate = recentShows.some((s) => s.id === show.id);
+    if (isDuplicate) return;
+
+    try {
+      const saved = await postContent(show);
+      setRecentShows((prev) => [saved, ...prev]);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const removeShow = (id) => {
-    setRecentShows((prev) => {
-      const next = prev.filter((s) => s.id !== id);
-      localStorage.setItem('recentShows', JSON.stringify(next));
-      return next;
-    });
+    setRecentShows((prev) => prev.filter((s) => s.id !== id));
+    // 필요시 DELETE /api/content/:id 추가
   };
 
   return { recentShows, addShow, removeShow };

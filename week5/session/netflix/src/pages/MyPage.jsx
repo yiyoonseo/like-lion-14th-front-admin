@@ -1,11 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from '../components/Modal';
 import MovieCard from '../components/MovieCard';
-import useRecentShows from '../hooks/useRecentShow';
+import { getContents } from '../apis/mypageApi';
 
 const MyPage = () => {
-  const { recentShows, removeShow } = useRecentShows();
+  const [recentShows, setRecentShows] = useState([]);
   const [selectedShow, setSelectedShow] = useState(null);
+
+  useEffect(() => {
+    getContents()
+      .then((data) => {
+        console.log('GET 받아온 데이터:', data); // 데이터 확인용
+        setRecentShows(data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <main className="px-4 py-6 md:px-6 md:py-8 lg:px-10 lg:py-10 space-y-6 md:space-y-7">
@@ -14,7 +23,7 @@ const MyPage = () => {
       <section>
         <h2>최근 본 콘텐츠</h2>
         {recentShows.length === 0 ? (
-          <p> 최근 본 콘텐츠가 없습니다.</p>
+          <p>최근 본 콘텐츠가 없습니다.</p>
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
             {recentShows.map((show) => (
@@ -24,15 +33,6 @@ const MyPage = () => {
                 className="relative group cursor-pointer"
               >
                 <MovieCard show={show} />
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeShow(show.id);
-                  }}
-                  className="absolute top-2 right-2 text-white text-xs"
-                >
-                  X
-                </button>
               </div>
             ))}
           </div>
