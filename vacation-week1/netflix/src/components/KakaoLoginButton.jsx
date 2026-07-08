@@ -1,5 +1,5 @@
 export const KaKaoLoginButton = () => {
-  const REDIRECT_URI = 'http://localhost:3000/auth/kakao/callback';
+  const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_KAKAO_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
   const KakaoIcon = './src/assets/kakaotalk.png';

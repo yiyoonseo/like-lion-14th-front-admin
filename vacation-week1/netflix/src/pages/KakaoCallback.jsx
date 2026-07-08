@@ -1,4 +1,3 @@
-// src/pages/KakaoCallback.jsx
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import useAuthStore from '../stores/useAuthStore';
@@ -7,6 +6,8 @@ const KakaoCallback = () => {
   const navigate = useNavigate();
   const setAccessToken = useAuthStore((state) => state.setAccessToken);
   const [searchParams] = useSearchParams();
+
+  const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
 
   useEffect(() => {
     const code = searchParams.get('code');
@@ -17,7 +18,6 @@ const KakaoCallback = () => {
   }, [searchParams]);
 
   const getTokenFromKakao = async (code) => {
-    const REDIRECT_URI = 'http://localhost:3000/auth/kakao/callback';
     const params = new URLSearchParams();
     params.append('grant_type', 'authorization_code');
     params.append('client_id', import.meta.env.VITE_KAKAO_API_KEY);
@@ -35,7 +35,7 @@ const KakaoCallback = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log('🎉 카카오 토큰 발급 성공:', data);
+        console.log('카카오 토큰 발급 성공:', data);
 
         // 스토리지에 토큰 저장
         setAccessToken(data.access_token);
